@@ -9,11 +9,14 @@ body {
     background: linear-gradient(135deg, #0f2027, #00c853, #1b5e20);
 }
 
+/* FIX: overlay jangan blok klik */
 .tech-overlay {
     position: fixed;
     width: 100%;
     height: 100%;
     background-image: radial-gradient(rgba(0,255,0,0.2) 1px, transparent 1px);
+    pointer-events: none; /* INI YANG BIKIN TOMBOL BISA DIKLIK */
+    z-index: 0;
 }
 
 /* LOGIN */
@@ -24,6 +27,8 @@ body {
     background: rgba(0,0,0,0.6);
     padding: 20px;
     border-radius: 10px;
+    position: relative; /* biar di atas overlay */
+    z-index: 1;
 }
 
 /* NAVBAR */
@@ -32,6 +37,8 @@ body {
     gap: 20px;
     padding: 15px;
     background: rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 1;
 }
 
 .logout {
@@ -59,6 +66,7 @@ body {
     background: rgba(0,0,0,0.8);
     justify-content: center;
     align-items: center;
+    z-index: 2; /* biar paling atas */
 }
 
 .popup-content {
@@ -71,6 +79,8 @@ body {
 .jual-container {
     text-align: center;
     margin-top: 150px;
+    position: relative;
+    z-index: 1;
 }
 
 .plus-btn {
